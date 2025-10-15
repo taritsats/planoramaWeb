@@ -1,12 +1,23 @@
-# React + Vite
+# Planorama Website
+This repository contains the front-end code for Planorama, a digital marketplace platform that connects customers with Event Organizer (EO) vendors. Developed as a project for the Management of Information Technology course at Universitas Brawijaya, Planorama aims to provide a modern and efficient solution for event planning.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# About the Project
+In today's digital era, the demand for event management services is growing, yet customers often face challenges in finding reliable vendors, comparing non-transparent prices, and spending too much time on manual searches. Planorama addresses this gap by creating a single-platform solution where customers can easily find, compare, and book trusted EO vendors.
 
-Currently, two official plugins are available:
+# Key Features
+* Simplified EO Search: An integrated digital platform that makes finding and booking event organizers easy and transparent.
+* Vendor Growth: Helps EO vendors expand their market reach, increase visibility, and secure more business opportunities.
+* Efficient Ecosystem: Builds a mutually beneficial digital ecosystem where customers gain transparency and efficiency, while vendors get broader business opportunities.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Technology Stack
+* Frontend: React
+* Styling: Tailwind CSS
+* Deployment: GitHub Pages
 
-## Expanding the ESLint configuration
+# Authors
+This project was developed by Group 5 from the Computer Engineering study program at the Faculty of Computer Science, Universitas Brawijaya.
+1. Taritsa Tsalitsatus Sholihah (235150301111023)
+2. Hanna Lailatul Islamiyah (235150301111024)
+3. Abdul Hakim Sidik Lessy (235150319111001)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Feel free to explore the code and learn more about our innovative solution for the event management industry.
