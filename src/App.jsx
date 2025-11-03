@@ -87,61 +87,61 @@ const EventCard = ({ title, description, imageUrl }) => (
 );
 
 const OurVendorPage = () => {
-    const eventData = [
-        {
-            title: "Birthday Party",
-            description: "Turn your birthday ideas into a perfect celebration.",
-            imageUrl: "/birthday.jpg", 
-        },
-        {
-            title: "Wedding Party",
-            description: "Turn your love story into a celebration you'll never forget.",
-            imageUrl: "/wedding.jpg",
-        },
-        {
-            title: "Corporate Event",
-            description: "Turn your business moments into memories that last.",
-            imageUrl: "/meeting.jpg",
-        },
-        {
-            title: "Private Gathering",
-            description: "Turn your moments into intimate memories that last forever.",
-            imageUrl: "/private.jpg",
-        },
-    ];
+  const eventData = [
+      {
+          title: "Birthday Party",
+          description: "Turn your birthday ideas into a perfect celebration.",
+          imageUrl: "/birthday.jpg", 
+      },
+      {
+          title: "Wedding Party",
+          description: "Turn your love story into a celebration you'll never forget.",
+          imageUrl: "/wedding.jpg",
+      },
+      {
+          title: "Corporate Event",
+          description: "Turn your business moments into memories that last.",
+          imageUrl: "/meeting.jpg",
+      },
+      {
+          title: "Private Gathering",
+          description: "Turn your moments into intimate memories that last forever.",
+          imageUrl: "/private.jpg",
+      },
+  ];
 
-    return (
-        <main className="flex-1 p-8 md:p-16">
-            <div className="max-w-7xl mx-auto">
-                <div className="flex justify-between items-start mb-12">
+  return (
+      <main className="flex-1 p-8 md:p-16">
+          <div className="max-w-screen mx-auto">
+              <div className="flex justify-between items-start mb-12">
 
-                  <div className="w-1/2 pr-8">
-                    <p className="text-[35px] font-poppins font-bold italic text-[#59ac77] mb-2">
-                        Hi, dear!
-                    </p>
-                    <h2 className="text-[28px] font-poppins font-light italic text-[#59ac77] whitespace-nowrap overflow-hidden">
-                        What plans do you want to make today?
-                    </h2>
-                  </div>
-                  <div className="w-1/2 pl-8">
-                    <p className="font-poppins text-[28px] !text-[#d25d5d] italic leading-relaxed pt-2">
-                        Choose your event type and let <span className="!text-[#59ac77]">Planorama</span> connect you with the perfect Event Organizer.
-                    </p>
-                  </div>
+                <div className="w-1/2 pr-8">
+                  <p className="text-[35px] font-poppins font-bold italic text-[#59ac77] mb-2">
+                      Hi, dear!
+                  </p>
+                  <h2 className="text-[28px] font-poppins font-light italic text-[#59ac77] whitespace-nowrap overflow-hidden">
+                      What plans do you want to make today?
+                  </h2>
                 </div>
-                <div className="flex flex-wrap -m-4 justify-center">
-                    {eventData.map((event, index) => (
-                        <EventCard 
-                            key={index} 
-                            title={event.title} 
-                            description={event.description} 
-                            imageUrl={event.imageUrl} 
-                        />
-                    ))}
+                <div className="w-1/2 pl-8">
+                  <p className="font-poppins text-[28px] !text-[#d25d5d] italic leading-relaxed pt-2">
+                      Choose your event type and let <span className="!text-[#59ac77]">Planorama</span> connect you with the perfect Event Organizer.
+                  </p>
                 </div>
-            </div>
-        </main>
-    );
+              </div>
+              <div className="flex flex-wrap -m-4 justify-center">
+                  {eventData.map((event, index) => (
+                      <EventCard 
+                          key={index} 
+                          title={event.title} 
+                          description={event.description} 
+                          imageUrl={event.imageUrl} 
+                      />
+                  ))}
+              </div>
+          </div>
+      </main>
+  );
 };
 
 // Komponen utama
