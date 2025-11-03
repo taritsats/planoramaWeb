@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Komponen untuk Halaman Beranda (Home Page)
+// Komponen untuk Home Page
 const HomePage = () => (
   <>
     <main className="flex-1 flex flex-col md:flex-row items-center justify-start p-8 md:p-18">
@@ -35,7 +35,7 @@ const HomePage = () => (
   </>
 );
 
-// Komponen untuk Halaman Tentang Kami (About Us Page)
+// Komponen untuk About Us Page
 const AboutUsPage = () => (
   <main className="flex-1 flex flex-col items-center p-8 md:p-16">
     {/* Konten halaman About Us */}
@@ -60,6 +60,90 @@ const AboutUsPage = () => (
   </main>
 );
 
+//Komponen untuk Our Vendor Page
+const EventCard = ({ title, description, imageUrl }) => (
+  <div className="w-full md:w-1/4 p-4">
+    <div className="bg-[#f0e3e3] rounded-xl overflow-hidden shadow-lg transform hover:scale-[1.03] transition duration-300">
+      <div className="h-[300px] overflow-hidden">
+        <img 
+          src={imageUrl} 
+          alt={title} 
+          className="w-full h-full object-cover" 
+        />
+      </div>
+      <div className="p-4 text-center">
+        <h3 className="font-poppins text-[22px] font-bold text-[#59ac77] italic mb-2">
+          {title}
+        </h3>
+        <p className="font-poppins text-[14px] text-[#aa6a3a] italic mb-4">
+          {description}
+        </p>
+        <button className="bg-[#aa6a3a] text-white font-poppins italic px-6 py-2 rounded-lg hover:bg-[#c05050] transition duration-200">
+          Details
+        </button>
+      </div>
+    </div>
+  </div>
+);
+
+const OurVendorPage = () => {
+    const eventData = [
+        {
+            title: "Birthday Party",
+            description: "Turn your birthday ideas into a perfect celebration.",
+            imageUrl: "/birthday.jpg", 
+        },
+        {
+            title: "Wedding Party",
+            description: "Turn your love story into a celebration you'll never forget.",
+            imageUrl: "/wedding.jpg",
+        },
+        {
+            title: "Corporate Event",
+            description: "Turn your business moments into memories that last.",
+            imageUrl: "/meeting.jpg",
+        },
+        {
+            title: "Private Gathering",
+            description: "Turn your moments into intimate memories that last forever.",
+            imageUrl: "/private.jpg",
+        },
+    ];
+
+    return (
+        <main className="flex-1 p-8 md:p-16">
+            <div className="max-w-7xl mx-auto">
+                <div className="flex justify-between items-start mb-12">
+
+                  <div className="w-1/2 pr-8">
+                    <p className="text-[35px] font-poppins font-bold italic text-[#59ac77] mb-2">
+                        Hi, dear!
+                    </p>
+                    <h2 className="text-[28px] font-poppins font-light italic text-[#59ac77] whitespace-nowrap overflow-hidden">
+                        What plans do you want to make today?
+                    </h2>
+                  </div>
+                  <div className="w-1/2 pl-8">
+                    <p className="font-poppins text-[28px] !text-[#d25d5d] italic leading-relaxed pt-2">
+                        Choose your event type and let <span className="!text-[#59ac77]">Planorama</span> connect you with the perfect Event Organizer.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex flex-wrap -m-4 justify-center">
+                    {eventData.map((event, index) => (
+                        <EventCard 
+                            key={index} 
+                            title={event.title} 
+                            description={event.description} 
+                            imageUrl={event.imageUrl} 
+                        />
+                    ))}
+                </div>
+            </div>
+        </main>
+    );
+};
+
 // Komponen utama
 const App = () => {
   const [activePage, setActivePage] = React.useState('home');
@@ -70,6 +154,8 @@ const App = () => {
         return <HomePage />;
       case 'about':
         return <AboutUsPage />;
+      case 'vendor':
+        return <OurVendorPage />;
       default:
         return <HomePage />;
     }
@@ -99,7 +185,11 @@ const App = () => {
               className={`!text-[#aa6a3a] hover:text-pink-500 transition-colors duration-300 ${activePage === 'about' ? 'underline' : ''} cursor-pointer`}>
                 About Us
             </a>
-            <a className="!text-[#aa6a3a] hover:text-pink-500 transition-colors duration-300">Our Vendor</a>
+            <a 
+              onClick={() => setActivePage('vendor')} // <-- Link ke laman Vendor
+              className={`!text-[#aa6a3a] hover:text-pink-500 transition-colors duration-300 ${activePage === 'vendor' ? 'underline' : ''} cursor-pointer`}>
+                Our Vendor
+            </a>
             <a className="!text-[#aa6a3a] hover:text-pink-500 transition-colors duration-300">Consultation</a>
             <a className="!text-[#aa6a3a] hover:text-pink-500 transition-colors duration-300">Testimonial</a>
           </div>
